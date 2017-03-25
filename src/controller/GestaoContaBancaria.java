@@ -10,10 +10,15 @@ public class GestaoContaBancaria {
 		listaConta.add(new ContaBancaria(numero,saldo,titular));
 	}
 	
-	public ContaBancaria listarConta(ArrayList<ContaBancaria> listaConta){
-		for(int i=0;i<listaConta.size();i++)
+	public ContaBancaria listarConta(ArrayList<ContaBancaria> listaConta,int index){
+		return listaConta.get(index);
+	}
+	
+	public Pessoa procTitular(ArrayList<ContaBancaria> listaConta,int numero){
+		for(ContaBancaria cb : listaConta)
 		{
-			
+			if(cb.getNumero()==numero) return cb.getTitular();
 		}
+		return null;
 	}
 }

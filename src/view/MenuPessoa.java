@@ -3,6 +3,7 @@ package view;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import controller.GestaoPessoa;
 import model.Pessoa;
 
 public class MenuPessoa {
@@ -11,6 +12,7 @@ public class MenuPessoa {
 	
 	public void menuPessoa(ArrayList<Pessoa> listaPessoa){
 		int opc;
+		String nome;
 		
 		do
 		{
@@ -26,11 +28,19 @@ public class MenuPessoa {
 			switch(opc)
 			{
 			case 1:
+				read.nextLine();
 				
+				System.out.println("Insira o nome: ");
+				nome = read.nextLine();
+				
+				new GestaoPessoa().addPessoa(listaPessoa, nome);
 				break;
 				
 			case 2:
-				
+				for(int i=0;i<listaPessoa.size();i++)
+				{
+					System.out.println("Nome: "+new GestaoPessoa().listarPessoa(listaPessoa, i).getNome());
+				}
 				break;
 			}
 			
