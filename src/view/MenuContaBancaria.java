@@ -41,7 +41,7 @@ public class MenuContaBancaria {
 					{
 						System.out.println("Insira o nome do titular: ");
 						nome = read.nextLine();
-					}while(new GestaoPessoa().procPessoa(listaPessoa, nome)!=null);
+					}while(new GestaoPessoa().procPessoa(listaPessoa, nome)==null);
 						
 					System.out.println("Insira o saldo: ");
 					saldo = read.nextFloat();
@@ -59,7 +59,7 @@ public class MenuContaBancaria {
 				{
 					System.out.println("Nome do Titular: "+new GestaoContaBancaria().listarConta(listaConta, i).getTitular().getNome());
 					System.out.println("Número de Conta: "+new GestaoContaBancaria().listarConta(listaConta, i).getNumero());
-					System.out.println("Saldo		   : "+new GestaoContaBancaria().listarConta(listaConta, i).getSaldo());
+					System.out.println("Saldo: "+new GestaoContaBancaria().listarConta(listaConta, i).getSaldo());
 				}
 				break;
 			}

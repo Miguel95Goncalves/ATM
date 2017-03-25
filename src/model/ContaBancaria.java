@@ -1,7 +1,7 @@
 package model;
 
 public class ContaBancaria {
-	private int id,numero;
+	private int numero;
 	private float saldo;
 	private Pessoa titular;
 	

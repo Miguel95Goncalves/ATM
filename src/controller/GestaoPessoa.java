@@ -16,7 +16,7 @@ public class GestaoPessoa {
 	public Pessoa procPessoa(ArrayList<Pessoa> listaPessoa,String nome){
 		for(Pessoa p : listaPessoa)
 		{
-			if(p.getNome()==nome) return p;
+			if(p.getNome().equals(nome))return p;
 		}
 		return null;
 	}

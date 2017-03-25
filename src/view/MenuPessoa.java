@@ -16,7 +16,7 @@ public class MenuPessoa {
 		
 		do
 		{
-			System.out.println("1 - Adicionar Pessoa\n2 - Listar Pessoas\n0 - Voltar\nInsira a opção: ");
+			System.out.println("1 - Adicionar Pessoa\n2 - Listar Pessoas\n3 - Procurar Pessoa\n0 - Voltar\nInsira a opção: ");
 			try{
 				opc = read.nextInt();
 			}catch(Exception e){
@@ -42,9 +42,20 @@ public class MenuPessoa {
 					System.out.println("Nome: "+new GestaoPessoa().listarPessoa(listaPessoa, i).getNome());
 				}
 				break;
+				
+			case 3:
+				read.nextLine();
+				
+				System.out.println("Insira o nome da pessoa: ");
+				nome = read.nextLine();
+				
+				if(new GestaoPessoa().procPessoa(listaPessoa, nome)!=null)
+				{
+					System.out.println(new GestaoPessoa().procPessoa(listaPessoa, nome).getNome());
+				}
+				break;
 			}
 			
 		}while(opc!=0);
-		
 	}
 }
