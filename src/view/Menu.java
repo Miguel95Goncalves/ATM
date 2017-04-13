@@ -2,6 +2,7 @@ package view;
 
 import java.util.Scanner;
 
+import controller.GestaoCarro;
 import controller.GestaoContaBancaria;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class Menu {
 	public void menu(){
 		int opc,numero,numero2;
 		float valor;
+		String nome = null;
 		
 		do
 		{
@@ -49,7 +51,8 @@ public class Menu {
 					if(new GestaoContaBancaria().procTitular(listaConta, numero)!=null)
 					{
 						conta=numero;
-						System.out.println("Bem Vindo "+new GestaoContaBancaria().procTitular(listaConta, numero).getNome());
+						nome=new GestaoContaBancaria().procTitular(listaConta, numero).getNome();
+						System.out.println("Bem Vindo "+nome);
 					}
 					else System.out.println("A conta não existe!");
 					break;
@@ -57,7 +60,7 @@ public class Menu {
 			}
 			else //Se entrar na Conta
 			{
-				System.out.println("1 - Levantar\n2 - Depositar\n3 - Transferir\n5 - Sair da Conta\n0 - Sair\nInsira a opção: ");
+				System.out.println("1 - Levantar\n2 - Depositar\n3 - Transferir\n4 - Listar Carros\n5 - Sair da Conta\n0 - Sair\nInsira a opção: ");
 				try{
 					opc = read.nextInt();
 				}catch(Exception e){
@@ -94,7 +97,12 @@ public class Menu {
 					break;
 					
 				case 4:
+					ArrayList<Carro> listaCarros = new GestaoCarro().listarCarros(listaPessoa, nome);
 					
+					for(Carro c : listaCarros)
+					{
+						System.out.println("Matricula: "+c.getMatricula()+"\nPortas: "+c.getPortas()+"\nCombustivel: "+c.getCombustivel());
+					}
 					break;
 					
 				case 5:

@@ -9,7 +9,7 @@ public class GestaoCarro {
 	public void addCarro(ArrayList<Entidade> listaEntidades,String nomeEntidade,String matricula,int portas,String combustivel){
 		for(Entidade e : listaEntidades)
 		{
-			if(e.getNome()==nomeEntidade) e.getListaCarros().add(new Carro(matricula,portas,combustivel));
+			if(e.getNome().equals(nomeEntidade)) e.getListaCarros().add(new Carro(matricula,portas,combustivel));
 		}
 	}
 	
