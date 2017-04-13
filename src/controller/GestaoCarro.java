@@ -36,7 +36,7 @@ public class GestaoCarro {
 		return null;
 	}
 	
-	public void venderCarro(ArrayList<ContaBancaria> listaContas,ArrayList<Entidade> listaEntidades,String vendedor,String comprador,float valor){
+	public void venderCarro(ArrayList<ContaBancaria> listaContas,ArrayList<Entidade> listaEntidades,String vendedor,String comprador,String matricula,float valor){
 		for(Entidade v : listaEntidades)
 		{
 			if(v.getNome().equals(vendedor))
@@ -45,7 +45,20 @@ public class GestaoCarro {
 				{
 					if(c.getNome().equals(comprador))
 					{
-						
+						if(new GestaoContaBancaria().procTitular(listaContas, c).getSaldo()>=valor)
+						{
+							for(Carro car : v.getListaCarros())
+							{
+								if(car.getMatricula().equals(matricula))
+								{
+									c.getListaCarros().add(car);
+									v.getListaCarros().remove(car);
+									new GestaoContaBancaria().procTitular(listaContas, c).setSaldo(new GestaoContaBancaria().procTitular(listaContas, c).getSaldo()-valor);
+									new GestaoContaBancaria().procTitular(listaContas, v).setSaldo(new GestaoContaBancaria().procTitular(listaContas, v).getSaldo()+valor);
+									break;
+								}
+							}
+						}
 					}
 				}
 			}

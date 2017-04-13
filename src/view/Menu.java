@@ -119,6 +119,11 @@ public class Menu {
 						{
 							System.out.println("Insira a matricula do carro que quer vender: ");
 							String matricula = read.nextLine();
+							
+							System.out.println("Insira o valor: ");
+							valor = read.nextFloat();
+							
+							new GestaoCarro().venderCarro(listaConta, listaPessoa, nome, nome2, matricula, valor);
 						}
 						else System.out.println("Entidade Inexistente!");
 					}else System.out.println("Não possui veiculos para vender!");

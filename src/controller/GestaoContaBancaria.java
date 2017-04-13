@@ -22,6 +22,14 @@ public class GestaoContaBancaria {
 		return null;
 	}
 	
+	public ContaBancaria procTitular(ArrayList<ContaBancaria> listaConta,Entidade titular){
+		for(ContaBancaria cb : listaConta)
+		{
+			if(titular.equals(cb.getTitular())) return cb;
+		}
+		return null;
+	}
+	
 	public void levantar(ArrayList<ContaBancaria> listaConta,int numero,float valor){
 		for(ContaBancaria cb : listaConta)
 		{
