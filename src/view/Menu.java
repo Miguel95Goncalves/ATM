@@ -23,7 +23,7 @@ public class Menu {
 		{
 			if(conta==0)
 			{
-				System.out.println("1 - ContaBancaria\n2 - Cliente\n3 - Entrar\n0 - Sair\nInsira a opção: ");
+				System.out.println("1 - ContaBancaria\n2 - Cliente\n3 - Entrar\n4 - Listar Carros\n0 - Sair\nInsira a opção: ");
 				try{
 					opc = read.nextInt();
 				}catch(Exception e){
@@ -57,7 +57,7 @@ public class Menu {
 			}
 			else //Se entrar na Conta
 			{
-				System.out.println("1 - Levantar\n2 - Depositar\n3 - Transferir\n4 - Sair da Conta\n0 - Sair\nInsira a opção: ");
+				System.out.println("1 - Levantar\n2 - Depositar\n3 - Transferir\n5 - Sair da Conta\n0 - Sair\nInsira a opção: ");
 				try{
 					opc = read.nextInt();
 				}catch(Exception e){
@@ -94,6 +94,10 @@ public class Menu {
 					break;
 					
 				case 4:
+					
+					break;
+					
+				case 5:
 					conta=0;
 					break;
 					
