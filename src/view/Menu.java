@@ -21,6 +21,7 @@ public class Menu {
 		int opc,numero,numero2;
 		float valor;
 		String nome = null;
+		ArrayList<Carro> listaCarros = new ArrayList<Carro>();
 		
 		do
 		{
@@ -98,7 +99,7 @@ public class Menu {
 					break;
 					
 				case 4:
-					ArrayList<Carro> listaCarros = new GestaoCarro().listarCarros(listaPessoa, nome);
+					listaCarros = new GestaoCarro().listarCarros(listaPessoa, nome);
 					
 					for(Carro c : listaCarros)
 					{
@@ -107,8 +108,8 @@ public class Menu {
 					break;
 					
 				case 5:
-					ArrayList<Carro> listaCarro = new GestaoCarro().listarCarros(listaPessoa, nome);
-					if(listaCarro.size()!=0)
+					listaCarros = new GestaoCarro().listarCarros(listaPessoa, nome);
+					if(listaCarros.size()!=0)
 					{
 						read.nextLine();
 					
@@ -130,7 +131,26 @@ public class Menu {
 					break;
 					
 				case 6:
+					listaCarros = new GestaoCarro().listarCarros(listaPessoa, nome);
+					if(listaCarros.size()!=0)
+					{
+						read.nextLine();
 					
+						System.out.println("Insira o nome da entidade que irá vender o veículo: ");
+						String nome2 = read.nextLine();
+						
+						if(new GestaoEntidade().procPessoa(listaPessoa, nome2)!=null)
+						{
+							System.out.println("Insira a matricula do carro que quer vender: ");
+							String matricula = read.nextLine();
+							
+							System.out.println("Insira o valor: ");
+							valor = read.nextFloat();
+							
+							new GestaoCarro().venderCarro(listaConta, listaPessoa, nome2, nome, matricula, valor);
+						}
+						else System.out.println("Entidade Inexistente!");
+					}else System.out.println("Não possui veiculos para vender!");
 					break;
 					
 				case 7:
