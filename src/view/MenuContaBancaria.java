@@ -3,18 +3,18 @@ package view;
 import java.util.ArrayList;
 
 import controller.GestaoContaBancaria;
-import controller.GestaoPessoa;
+import controller.GestaoEntidade;
 
 import java.util.Scanner;
 
 import model.ContaBancaria;
-import model.Pessoa;
+import model.Entidade;
 
 public class MenuContaBancaria {
 	
 	Scanner read = (new Scanner(System.in));
 	
-	public void menuContaBancaria(ArrayList<ContaBancaria> listaConta,ArrayList<Pessoa> listaPessoa){
+	public void menuContaBancaria(ArrayList<ContaBancaria> listaConta,ArrayList<Entidade> listaPessoa){
 		int opc,numero;
 		float saldo;
 		String nome;
@@ -41,7 +41,7 @@ public class MenuContaBancaria {
 					{
 						System.out.println("Insira o nome do titular: ");
 						nome = read.nextLine();
-					}while(new GestaoPessoa().procPessoa(listaPessoa, nome)==null);
+					}while(new GestaoEntidade().procPessoa(listaPessoa, nome)==null);
 						
 					System.out.println("Insira o saldo: ");
 					saldo = read.nextFloat();
@@ -49,7 +49,7 @@ public class MenuContaBancaria {
 					System.out.println("Insira o numero de conta: ");
 					numero = read.nextInt();
 					
-					new GestaoContaBancaria().addConta(listaConta, saldo, numero, new GestaoPessoa().procPessoa(listaPessoa, nome));
+					new GestaoContaBancaria().addConta(listaConta, saldo, numero, new GestaoEntidade().procPessoa(listaPessoa, nome));
 				}
 				else System.out.println("Insira primeiro clientes!");
 				break;

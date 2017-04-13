@@ -3,10 +3,10 @@ package controller;
 import java.util.ArrayList;
 
 import model.ContaBancaria;
-import model.Pessoa;
+import model.Entidade;
 
 public class GestaoContaBancaria {
-	public void addConta(ArrayList<ContaBancaria> listaConta,float saldo,int numero,Pessoa titular){ //Adicionar Conta
+	public void addConta(ArrayList<ContaBancaria> listaConta,float saldo,int numero,Entidade titular){ //Adicionar Conta
 		listaConta.add(new ContaBancaria(numero,saldo,titular));
 	}
 	
@@ -14,7 +14,7 @@ public class GestaoContaBancaria {
 		return listaConta.get(index);
 	}
 	
-	public Pessoa procTitular(ArrayList<ContaBancaria> listaConta,int numero){
+	public Entidade procTitular(ArrayList<ContaBancaria> listaConta,int numero){
 		for(ContaBancaria cb : listaConta)
 		{
 			if(cb.getNumero()==numero) return cb.getTitular();

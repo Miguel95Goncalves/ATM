@@ -3,9 +3,9 @@ package model;
 public class ContaBancaria {
 	private int numero;
 	private float saldo;
-	private Pessoa titular;
+	private Entidade titular;
 	
-	public ContaBancaria(int numero, float saldo, Pessoa titular) {
+	public ContaBancaria(int numero, float saldo, Entidade titular) {
 		super();
 		this.numero = numero;
 		this.saldo = saldo;
@@ -24,10 +24,10 @@ public class ContaBancaria {
 	public void setSaldo(float saldo) {
 		this.saldo = saldo;
 	}
-	public Pessoa getTitular() {
+	public Entidade getTitular() {
 		return titular;
 	}
-	public void setTitular(Pessoa titular) {
+	public void setTitular(Entidade titular) {
 		this.titular = titular;
 	}
 	

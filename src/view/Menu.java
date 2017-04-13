@@ -11,7 +11,7 @@ import model.*;
 public class Menu {
 	
 	ArrayList<ContaBancaria> listaConta = new ArrayList<ContaBancaria>();
-	ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
+	ArrayList<Entidade> listaPessoa = new ArrayList<Entidade>();
 	Scanner read = (new Scanner(System.in));
 	public static int conta=0;
 	
@@ -39,7 +39,7 @@ public class Menu {
 					break;
 					
 				case 2:
-					new MenuPessoa().menuPessoa(listaPessoa);
+					new MenuEntidade().menuPessoa(listaPessoa);
 					break;
 					
 				case 3:

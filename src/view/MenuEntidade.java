@@ -3,14 +3,14 @@ package view;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import controller.GestaoPessoa;
-import model.Pessoa;
+import controller.GestaoEntidade;
+import model.Entidade;
 
-public class MenuPessoa {
+public class MenuEntidade {
 	
 	Scanner read = (new Scanner(System.in));
 	
-	public void menuPessoa(ArrayList<Pessoa> listaPessoa){
+	public void menuPessoa(ArrayList<Entidade> listaPessoa){
 		int opc;
 		String nome;
 		
@@ -33,13 +33,13 @@ public class MenuPessoa {
 				System.out.println("Insira o nome: ");
 				nome = read.nextLine();
 				
-				new GestaoPessoa().addPessoa(listaPessoa, nome);
+				new GestaoEntidade().addPessoa(listaPessoa, nome);
 				break;
 				
 			case 2:
 				for(int i=0;i<listaPessoa.size();i++)
 				{
-					System.out.println("Nome: "+new GestaoPessoa().listarPessoa(listaPessoa, i).getNome());
+					System.out.println("Nome: "+new GestaoEntidade().listarPessoa(listaPessoa, i).getNome());
 				}
 				break;
 				
@@ -49,9 +49,9 @@ public class MenuPessoa {
 				System.out.println("Insira o nome da pessoa: ");
 				nome = read.nextLine();
 				
-				if(new GestaoPessoa().procPessoa(listaPessoa, nome)!=null)
+				if(new GestaoEntidade().procPessoa(listaPessoa, nome)!=null)
 				{
-					System.out.println(new GestaoPessoa().procPessoa(listaPessoa, nome).getNome());
+					System.out.println(new GestaoEntidade().procPessoa(listaPessoa, nome).getNome());
 				}
 				break;
 			}
