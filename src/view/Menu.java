@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import controller.GestaoCarro;
 import controller.GestaoContaBancaria;
+import controller.GestaoEntidade;
 
 import java.util.ArrayList;
 
@@ -60,7 +61,7 @@ public class Menu {
 			}
 			else //Se entrar na Conta
 			{
-				System.out.println("1 - Levantar\n2 - Depositar\n3 - Transferir\n4 - Listar Carros\n5 - Sair da Conta\n0 - Sair\nInsira a opção: ");
+				System.out.println("1 - Levantar\n2 - Depositar\n3 - Transferir\n4 - Listar Carros\n5 - Vender Carro\n6 - Comprar Carro\n7 - Sair da Conta\n0 - Sair\nInsira a opção: ");
 				try{
 					opc = read.nextInt();
 				}catch(Exception e){
@@ -106,6 +107,28 @@ public class Menu {
 					break;
 					
 				case 5:
+					ArrayList<Carro> listaCarro = new GestaoCarro().listarCarros(listaPessoa, nome);
+					if(listaCarro.size()!=0)
+					{
+						read.nextLine();
+					
+						System.out.println("Insira o nome da entidade que irá comprar o veículo: ");
+						String nome2 = read.nextLine();
+						
+						if(new GestaoEntidade().procPessoa(listaPessoa, nome2)!=null)
+						{
+							System.out.println("Insira a matricula do carro que quer vender: ");
+							String matricula = read.nextLine();
+						}
+						else System.out.println("Entidade Inexistente!");
+					}else System.out.println("Não possui veiculos para vender!");
+					break;
+					
+				case 6:
+					
+					break;
+					
+				case 7:
 					conta=0;
 					break;
 					

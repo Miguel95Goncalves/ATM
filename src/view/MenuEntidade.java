@@ -59,7 +59,7 @@ public class MenuEntidade {
 			case 4:
 				read.nextLine();
 				
-				System.out.println("Insira o nome da pessoa: ");
+				System.out.println("Insira o nome da entidade: ");
 				nome = read.nextLine();
 				
 				if(new GestaoEntidade().procPessoa(listaPessoa, nome)!=null)
@@ -87,7 +87,7 @@ public class MenuEntidade {
 					}
 					new GestaoCarro().addCarro(listaPessoa, nome, matricula, portas, combustivel);
 				}
-				else System.out.println("Pessoa Inexistente!");
+				else System.out.println("Entidade Inexistente!");
 				break;
 			}
 			

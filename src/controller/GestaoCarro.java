@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import model.Entidade;
 import model.Carro;
+import model.ContaBancaria;
 
 public class GestaoCarro {
 	public void addCarro(ArrayList<Entidade> listaEntidades,String nomeEntidade,String matricula,int portas,String combustivel){
@@ -33,5 +34,21 @@ public class GestaoCarro {
 			if(e.getNome()==nomeEntidade) return e.getListaCarros();
 		}
 		return null;
+	}
+	
+	public void venderCarro(ArrayList<ContaBancaria> listaContas,ArrayList<Entidade> listaEntidades,String vendedor,String comprador,float valor){
+		for(Entidade v : listaEntidades)
+		{
+			if(v.getNome().equals(vendedor))
+			{
+				for(Entidade c : listaEntidades)
+				{
+					if(c.getNome().equals(comprador))
+					{
+						
+					}
+				}
+			}
+		}
 	}
 }
